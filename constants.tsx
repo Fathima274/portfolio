@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 3,
-    title: "Cherry 'on' Top (Figma)",
+    title: "Cherry 'on' Top-Bakery Website (Figma)",
     description: "A warm, donut-themed bakery hero section designed in Figma with a clean layout, bold typography, and an inviting CTA.",
     tags: ["Figma", "UI Design", "Landing Page"],
     image: "figma.png",
