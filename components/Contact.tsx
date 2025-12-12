@@ -1,80 +1,111 @@
 import React from 'react';
-import { RevealOnScroll } from './RevealOnScroll';
+import { PERSONAL_INFO } from '../constants';
 import { Mail, Phone, Linkedin, Github, Send } from 'lucide-react';
+import { Reveal } from './Reveal';
 
-export const Contact: React.FC = () => {
+const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-20 md:py-32 px-6 relative">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-        <div>
-          <RevealOnScroll>
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold mb-6 md:mb-8 leading-tight">
-              Let's Make <br /> Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Great</span>.
+    <section id="contact" className="py-24 px-6 relative overflow-hidden">
+       {/* Background Glow */}
+      <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-indigo-600 rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+        
+        {/* Left Column: Text & Contact Info */}
+        <div className="flex flex-col justify-center">
+          <Reveal>
+            <h2 className="text-5xl md:text-7xl font-heading font-bold leading-tight mb-8 text-zinc-900 dark:text-white">
+              Let’s Make <br />
+              Something <span className="text-indigo-500">Great.</span>
             </h2>
-          </RevealOnScroll>
-
-          <RevealOnScroll delay={0.2}>
-            <p className="text-lg md:text-xl text-gray-400 mb-8 md:mb-12 max-w-lg">
-              I'm always open to discussing product design work or partnership opportunities.
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-12 max-w-md">
+              Whether you have a project in mind or just want to chat about design and tech, I'm always open to new opportunities.
             </p>
-          </RevealOnScroll>
+          </Reveal>
+          
+          <Reveal delay={0.3}>
+            <div className="flex flex-col gap-6">
+              <a href={`mailto:${PERSONAL_INFO.email}`} className="flex items-center gap-4 text-xl font-medium text-zinc-900 dark:text-zinc-50 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors group">
+                <span className="p-3 bg-zinc-100 dark:bg-zinc-900 rounded-full group-hover:bg-indigo-50 dark:group-hover:bg-indigo-500/10 transition-colors">
+                  <Mail className="w-5 h-5" />
+                </span>
+                {PERSONAL_INFO.email}
+              </a>
+              <a href={`tel:${PERSONAL_INFO.phone}`} className="flex items-center gap-4 text-xl font-medium text-zinc-900 dark:text-zinc-50 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors group">
+                <span className="p-3 bg-zinc-100 dark:bg-zinc-900 rounded-full group-hover:bg-indigo-50 dark:group-hover:bg-indigo-500/10 transition-colors">
+                  <Phone className="w-5 h-5" />
+                </span>
+                {PERSONAL_INFO.phone}
+              </a>
+            </div>
+          </Reveal>
 
-          <div className="space-y-4 md:space-y-6">
-            <RevealOnScroll delay={0.3}>
-                <a href="mailto:contact@alexcarter.dev" className="flex items-center space-x-3 md:space-x-4 text-lg md:text-xl text-gray-300 hover:text-white transition-colors group">
-                    <div className="p-2 md:p-3 bg-white/5 rounded-full border border-white/10 group-hover:border-blue-500/50 transition-all">
-                        <Mail className="w-5 h-5 md:w-6 md:h-6" />
-                    </div>
-                    <span>contact@alexcarter.dev</span>
+          {/* Socials moved to left */}
+          <Reveal delay={0.4}>
+             <div className="flex gap-4 mt-10">
+                <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className="p-3 bg-zinc-100 dark:bg-zinc-900 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-indigo-500 dark:hover:text-white hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-all">
+                   <Linkedin className="w-5 h-5" />
                 </a>
-            </RevealOnScroll>
-            
-            <RevealOnScroll delay={0.4}>
-                <a href="tel:+15551234567" className="flex items-center space-x-3 md:space-x-4 text-lg md:text-xl text-gray-300 hover:text-white transition-colors group">
-                    <div className="p-2 md:p-3 bg-white/5 rounded-full border border-white/10 group-hover:border-purple-500/50 transition-all">
-                        <Phone className="w-5 h-5 md:w-6 md:h-6" />
-                    </div>
-                    <span>+1 (555) 123-4567</span>
+                <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="p-3 bg-zinc-100 dark:bg-zinc-900 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-indigo-500 dark:hover:text-white hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-all">
+                   <Github className="w-5 h-5" />
                 </a>
-            </RevealOnScroll>
-          </div>
-
-          <div className="flex gap-4 mt-8 md:mt-12">
-             <RevealOnScroll delay={0.5}>
-                <a href="#" className="p-3 md:p-4 bg-zinc-900 rounded-full hover:bg-blue-600 hover:text-white transition-all text-gray-400 border border-white/10">
-                    <Linkedin className="w-5 h-5 md:w-6 md:h-6" />
-                </a>
-             </RevealOnScroll>
-             <RevealOnScroll delay={0.6}>
-                <a href="#" className="p-3 md:p-4 bg-zinc-900 rounded-full hover:bg-white hover:text-black transition-all text-gray-400 border border-white/10">
-                    <Github className="w-5 h-5 md:w-6 md:h-6" />
-                </a>
-             </RevealOnScroll>
-          </div>
+             </div>
+          </Reveal>
         </div>
 
-        <div className="relative flex items-center justify-center mt-8 lg:mt-0">
-             <RevealOnScroll delay={0.4} width="100%">
-                <form className="w-full space-y-4 md:space-y-6 bg-zinc-900/50 p-6 md:p-12 rounded-2xl md:rounded-3xl border border-white/5 shadow-xl">
-                    <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-2">Name</label>
-                        <input type="text" className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors placeholder:text-white/20" placeholder="Your Name" />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-2">Email</label>
-                        <input type="email" className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors placeholder:text-white/20" placeholder="Your Email" />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-2">Message</label>
-                        <textarea rows={4} className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors resize-none placeholder:text-white/20" placeholder="Tell me about your project..."></textarea>
-                    </div>
-                    <button type="button" className="w-full bg-white text-black font-bold py-3 md:py-4 rounded-xl hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 text-base md:text-lg">
-                        Send Message <Send className="w-4 h-4 md:w-5 md:h-5" />
-                    </button>
-                </form>
-             </RevealOnScroll>
+        {/* Right Column: Contact Form */}
+        <div className="flex flex-col justify-center lg:items-end">
+          <Reveal delay={0.4}>
+             <form className="bg-white dark:bg-zinc-900/50 p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 w-full max-w-lg shadow-xl shadow-zinc-200/50 dark:shadow-none transition-colors">
+                <div className="mb-6">
+                  <label htmlFor="name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">Name</label>
+                  <input 
+                    type="text" 
+                    id="name"
+                    placeholder="Your Name" 
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+                  />
+                </div>
+                
+                <div className="mb-6">
+                  <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">Email</label>
+                  <input 
+                    type="email" 
+                    id="email"
+                    placeholder="Your Email" 
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
+                  />
+                </div>
+
+                <div className="mb-8">
+                  <label htmlFor="message" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">Message</label>
+                  <textarea 
+                    id="message"
+                    rows={4} 
+                    placeholder="Tell me about your project..." 
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600 resize-none"
+                  ></textarea>
+                </div>
+
+                <button 
+                  type="button" 
+                  className="w-full py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 font-bold rounded-xl hover:bg-indigo-600 dark:hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2"
+                >
+                  Send Message <Send className="w-4 h-4" />
+                </button>
+             </form>
+          </Reveal>
         </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto mt-24 pt-8 border-t border-zinc-200 dark:border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-500 dark:text-zinc-500 text-sm transition-colors">
+        <p>&copy; {new Date().getFullYear()} {PERSONAL_INFO.name} — All Rights Reserved.</p>
+        <p>Built with React, Tailwind & Framer Motion</p>
       </div>
     </section>
   );
 };
+
+export default Contact;
