@@ -46,18 +46,22 @@ export const PROJECTS: Project[] = [
     title: "CareNexus",
     description: "smart healthcare assistant that helps users understand their symptoms and quickly find the right hospitals, doctors, and medical support.",
     tags: ["React", "Node.js", "Express", "MongoDB", "Healthcare", "Web Application"],
+    image: "carenexus.png",
   },
   {
     id: 2,
     title: "MediTracker",
-    description: "Medicine expiry reminder app designed to reduce waste and ensure timely medication intake.",
-    tags: ["React Native", "Firebase", "UX Design"],
+    description: "MediTracker helps users track medicines, symptoms, and health records in one place.It keeps everything organized and easy to access.",
+    tags: ["React Native", "Firebase", "UX Design","HTML","CSS"],
+     image: "med.png",
   },
   {
     id: 3,
-    title: "Personal Portfolio",
-    description: "A modern, animated portfolio website showcasing my skills, projects, and design philosophy.",
-    tags: ["React", "Tailwind CSS", "Framer Motion"],
+    title: "Cherry 'on' Top — Bakery Landing (Figma",
+    description: "A warm, donut-themed bakery hero section designed in Figma with a clean layout, bold typography, and an inviting CTA.",
+    tags: ["Figma", "UI Design", "Landing Page"],
+    image: "figma.png",
+
   },
 ];
 

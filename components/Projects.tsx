@@ -21,12 +21,12 @@ const Projects: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PROJECTS.map((project, index) => (
-            <Reveal key={project.id} delay={0.2 * index}>
+            <Reveal key={project.id} delay={0.2 * index} width="100%">
               <div className="group bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden hover:border-zinc-400 dark:hover:border-zinc-600 transition-all duration-300 h-full flex flex-col shadow-lg shadow-zinc-200/50 dark:shadow-none">
                 {/* Image Placeholder */}
                 <div className="aspect-video bg-zinc-200 dark:bg-zinc-900 overflow-hidden relative">
                    <img 
-                    src={`https://picsum.photos/600/400?random=${project.id}`} 
+                    src={project.image || `https://picsum.photos/600/400?random=${project.id}`} 
                     alt={project.title}
                     className="w-full h-full object-cover opacity-90 dark:opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform duration-500"
                   />
