@@ -27,17 +27,17 @@ const Contact: React.FC = () => {
           
           <Reveal delay={0.3}>
             <div className="flex flex-col gap-4 md:gap-6">
-              <a href={`mailto:${PERSONAL_INFO.email}`} className="flex items-center gap-4 text-lg md:text-xl font-medium text-zinc-900 dark:text-zinc-50 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors group">
-                <span className="p-3 bg-zinc-100 dark:bg-zinc-900 rounded-full group-hover:bg-indigo-50 dark:group-hover:bg-indigo-500/10 transition-colors">
+              <a href={`mailto:${PERSONAL_INFO.email}`} className="flex items-center gap-3 md:gap-4 text-base md:text-xl font-medium text-zinc-900 dark:text-zinc-50 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors group">
+                <span className="p-3 bg-zinc-100 dark:bg-zinc-900 rounded-full group-hover:bg-indigo-50 dark:group-hover:bg-indigo-500/10 transition-colors flex-shrink-0">
                   <Mail className="w-5 h-5" />
                 </span>
-                {PERSONAL_INFO.email}
+                <span className="break-all">{PERSONAL_INFO.email}</span>
               </a>
-              <a href={`tel:${PERSONAL_INFO.phone}`} className="flex items-center gap-4 text-lg md:text-xl font-medium text-zinc-900 dark:text-zinc-50 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors group">
-                <span className="p-3 bg-zinc-100 dark:bg-zinc-900 rounded-full group-hover:bg-indigo-50 dark:group-hover:bg-indigo-500/10 transition-colors">
+              <a href={`tel:${PERSONAL_INFO.phone}`} className="flex items-center gap-3 md:gap-4 text-base md:text-xl font-medium text-zinc-900 dark:text-zinc-50 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors group">
+                <span className="p-3 bg-zinc-100 dark:bg-zinc-900 rounded-full group-hover:bg-indigo-50 dark:group-hover:bg-indigo-500/10 transition-colors flex-shrink-0">
                   <Phone className="w-5 h-5" />
                 </span>
-                {PERSONAL_INFO.phone}
+                <span className="break-words">{PERSONAL_INFO.phone}</span>
               </a>
             </div>
           </Reveal>
